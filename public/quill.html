@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <!-- Include stylesheet -->
+        <link href="https://cdn.quilljs.com/1.2.2/quill.snow.css" rel="stylesheet">        
+        <meta name="viewport" content="width=device-width, initial-scale = 1.0, user-scalable = no">
+    </head>
+    <body>
+
+        <h1>My First Heading</h1>
+        <p>My first paragraph.</p>
+
+
+        <div id="full-wrapper">
+            <div id="full-container">
+                <div class="toolbar"></div>
+                <div class="editor"></div>
+            </div>
+        </div>
+
+
+        <script type="text/rocketscript" data-rocketsrc="//ajax.googleapis.com/ajax/libs/jquery/3.0.0/jquery.min.js"></script>
+
+        <!-- Include the Quill library -->
+        <script src="https://cdn.quilljs.com/1.2.2/quill.js"></script>
+
+        <!-- Initialize Quill editor -->
+        <script>
+            var fonts = ['sofia', 'slabo', 'roboto', 'inconsolata', 'ubuntu'];
+
+            var fullEditor = new Quill('#full-container .editor', {
+                bounds: '#full-container .editor',
+                modules: {
+                    'formula': true,
+                    'syntax': true,
+                    'toolbar': [
+                    [{ 'font': fonts }, { 'size': [] }],
+                    [ 'bold', 'italic', 'underline', 'strike' ],
+                    [{ 'color': [] }, { 'background': [] }],
+                    [{ 'script': 'super' }, { 'script': 'sub' }],
+                    [{ 'header': '1' }, { 'header': '2' }, 'blockquote', 'code-block' ],
+                    [{ 'list': 'ordered' }, { 'list': 'bullet'}, { 'indent': '-1' }, { 'indent': '+1' }],
+                    [ 'direction', { 'align': [] }],
+                    [ 'link', 'image', 'video', 'formula' ],
+                    [ 'clean' ]
+                    ],
+                },
+                theme: 'snow'
+            });           
+        </script>
+
+    </body>
+</html>
